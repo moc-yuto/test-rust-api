@@ -1,9 +1,8 @@
 #![feature(plugin)]
 #![plugin(rocket_codegen)]
 
-extern crate rocket;
 extern crate mysql;
-
+extern crate rocket;
 pub mod domain;
 pub mod external;
 pub mod usecase;
