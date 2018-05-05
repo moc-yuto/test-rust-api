@@ -1,10 +1,6 @@
-use ::domain;
+use external;
 
 pub fn find_by(user_id: i32) -> String {
-    let name = match user_id {
-        1 => "Taro".to_string(),
-        2 => "Jiro".to_string(),
-        _ => "Unknown".to_string(),
-    };
+    let name = external::mysql::user::find_by(user_id);
     name
 }

@@ -2,10 +2,11 @@
 #![plugin(rocket_codegen)]
 
 extern crate rocket;
-pub mod usecase;
+extern crate mysql;
+
 pub mod domain;
 pub mod external;
-
+pub mod usecase;
 
 #[get("/debug")]
 fn debug() -> &'static str {
@@ -20,6 +21,6 @@ fn get_user(user_id: i32) -> String {
 
 fn main() {
     rocket::ignite()
-    .mount("/", routes![debug,get_user])
-    .launch();
+        .mount("/", routes![debug, get_user])
+        .launch();
 }
